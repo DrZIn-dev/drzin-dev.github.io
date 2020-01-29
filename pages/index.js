@@ -65,17 +65,17 @@ export default () => {
         }
       `}</style>
       <Grid container>
-        <Grid item md={12} lg={12}>
+        <Grid item xs={12} sm={12} md={12} lg={12}>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <AboutMeHeader>ABOUT ME</AboutMeHeader>
           </div>
         </Grid>
-        <Grid item md={12} lg={6} justify="center">
+        <Grid item xs={12} sm={12} md={12} lg={6} justify="center">
           <diV style={{ display: "flex", justifyContent: "center" }}>
             <img src={require("../public/static/profile.png")} />
           </diV>
         </Grid>
-        <Grid item md={12} lg={6} justify="flex-start">
+        <Grid item xs={12} sm={12} md={12} lg={6} justify="flex-start">
           <ParagraphText>Hello , My name is PASAWEE LAEARUN</ParagraphText>
           <br></br>
           <br></br>
