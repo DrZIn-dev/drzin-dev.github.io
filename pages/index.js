@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Nav from "../components/Nav";
-import BackgroudImg from "./images/background.JPG";
+import { Grid } from "@material-ui/core";
 
 export default () => {
   let [name, setName] = React.useState("asd");
@@ -14,11 +14,77 @@ export default () => {
         console.log(data);
       });
   }, []);
-  const renderData = () => data.map(v => <li key={v.id}>{v.name}</li>);
 
+  const IndexWrapper = styled.div`
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #4a5c5c;
+  `;
+  const AboutWrapper = styled.div`
+    display: flex;
+    margin: 0;
+    padding: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: -1;
+    background-color: #4a5c5c;
+  `;
+  const renderData = () => data.map(v => <li key={v.id}>{v.name}</li>);
+  const AboutMeHeader = styled.h1`
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 77px;
+    color: #ffffff;
+  `;
+
+  const ParagraphText = styled.div`
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: center;
+
+    color: #ffffff;
+  `;
   return (
-    <>
-      <Nav name={name} />
-    </>
+    <AboutWrapper>
+      <style jsx global>{`
+        body {
+          margin: 0;
+          padding: 0;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 1.8;
+          color: #333;
+          font-family: sans-serif;
+        }
+      `}</style>
+      <Grid container>
+        <Grid item md={12} lg={12}>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <AboutMeHeader>ABOUT ME</AboutMeHeader>
+          </div>
+        </Grid>
+        <Grid item md={12} lg={6} justify="center">
+          <diV style={{ display: "flex", justifyContent: "center" }}>
+            <img src={require("../public/static/profile.png")} />
+          </diV>
+        </Grid>
+        <Grid item md={12} lg={6} justify="flex-start">
+          <ParagraphText>Hello , My name is PASAWEE LAEARUN</ParagraphText>
+          <br></br>
+          <br></br>
+          <ParagraphText style={{ fontSize: "24px" }}>
+            STORY ALWAYS TOLD BY WORD MEMMORIAL ALWAYS KEEP IN PHOTO LIFE IS A
+            PHOTO EVERY SECONDS ARE JOURNALS MY STRORY KEEP IN ON PHOTO
+          </ParagraphText>
+        </Grid>
+      </Grid>
+    </AboutWrapper>
   );
 };
