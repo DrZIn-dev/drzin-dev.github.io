@@ -18,5 +18,6 @@ psd
 thumb
 sketch
 .next
+out
 # End of https://www.gitignore.io/api/react
 node_modules
