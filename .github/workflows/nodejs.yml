@@ -12,18 +12,7 @@ jobs:
       uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
       with:
         persist-credentials: false
-        
-    - name: clean repo
-      run: |
-          git config --global user.name ${{secrets.username}}
-          git config --global user.email ${{secrets.email}}
-          git clone https://github.com/DrZIn-dev/DrZln-dev.github.io.git tmp
-          cd tmp
-          git checkout -q master
-          git status
-          git rm -r .
-          git commit -m "clean repo"
-          git push "https://DrZIn-dev:${{secrets.ACCESS_TOKEN}}@github.com:DrZIn-dev/DrZln-dev.github.io.git" master
+      
           
     - name: prepare
       run: npm install
