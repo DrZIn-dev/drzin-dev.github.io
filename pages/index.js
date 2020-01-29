@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Nav from "../components/Nav";
+import BackgroudImg from "./images/background.JPG";
 
 export default () => {
   let [name, setName] = React.useState("asd");
@@ -15,11 +16,9 @@ export default () => {
   }, []);
   const renderData = () => data.map(v => <li key={v.id}>{v.name}</li>);
 
-  
   return (
     <>
       <Nav name={name} />
-      <ul>{data === [] ? null : renderData()}</ul>
     </>
   );
 };

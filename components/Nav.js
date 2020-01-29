@@ -1,16 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import Appbar from "@material-ui/core/AppBar";
-const Nav = styled.nav`
-  height: 56px;
-  width: 100%;
-  display: flex;
-`;
 
+import Appbar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+
+const navBarStyle = {
+  backgroundColor: "transparent",
+  boxShadow: "none",
+  color: "black"
+};
 export default ({ name }) => {
   return (
-    <Nav>
-      <Appbar>{name}</Appbar>
-    </Nav>
+    <Appbar style={navBarStyle}>
+      <Toolbar>
+        <Typography>HOME</Typography>
+        <Typography>REPOSITORY</Typography>
+        <Typography>ABOUT</Typography>
+      </Toolbar>
+    </Appbar>
   );
 };
